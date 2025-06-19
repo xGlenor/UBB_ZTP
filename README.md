@@ -4,15 +4,17 @@
 ## Overview
 The **Image Processing Server** is a C# application that processes image transformation requests (e.g., grayscale, blur) using RabbitMQ for message queuing. The server listens for incoming requests, processes the images, and sends back the results.
 
+**Note:** This project is a university assignment.
+
 ## Features
 - Supports image processing operations such as:
-  - Grayscale
-  - Blur
+    - Grayscale
+    - Blur
 - Uses RabbitMQ for asynchronous communication.
 - Handles large image files with configurable message size limits.
 
 ## Prerequisites
-- [.NET 6.0](https://dotnet.microsoft.com/download/dotnet/6.0)
+- [.NET 9.0](https://dotnet.microsoft.com/download/dotnet/9.0)
 - [Docker](https://www.docker.com/) (for RabbitMQ setup)
 - RabbitMQ Docker image with management plugin.
 
@@ -64,4 +66,3 @@ dotnet run
 
 ## License
 This project is licensed under the MIT License.
-```
