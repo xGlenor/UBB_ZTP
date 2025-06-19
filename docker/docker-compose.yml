@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin123
+    volumes:
+      - ./rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf:ro
+    ulimits:
+      nofile:
+        soft: 1048576
+        hard: 1048576
+    command: ["rabbitmq-server", "--erl", "+S 2:2 +P 1048576"]
+
+
